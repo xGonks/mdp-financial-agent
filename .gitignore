@@ -10,9 +10,11 @@ __pycache__/
 .ipynb_checkpoints/
 
 # Data
-data/raw/
-data/processed/
-data/external/
+data/*
+!data/raw/
+!data/processed/
+!data/external/
+!data/**/.gitkeep
 
 # VSCode
 .vscode/
