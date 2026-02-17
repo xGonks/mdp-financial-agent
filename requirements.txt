@@ -1,0 +1,4 @@
+pymdptoolbox
+yfinance
+pandas
+numpy
