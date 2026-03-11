@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mdp"
+version = "0.1.0"
+authors = [
+    { name = "Gonzalo Makenly Higuera Inzunza" }
+]
+requires-python = ">=3.10"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]

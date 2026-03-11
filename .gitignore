@@ -1,0 +1,56 @@
+# pip install -r requirements.txt
+# pip install -e .
+# pip install ipykernel
+# from template.utils.print_numbers import print_numbers
+
+**pycache**/
+*.py[cod]
+*$py.class
+*.so
+*.pyd
+*.pyo
+
+venv/
+.env/
+.venv/
+env/
+ENV/
+pythonenv/
+
+.ipynb_checkpoints
+
+data/raw/*
+data/processed/*
+data/external/*
+
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+!data/external/.gitkeep
+
+models/*
+!models/.gitkeep
+
+experiments/*
+!experiments/.gitkeep
+
+reports/figures/*
+reports/results/*
+
+!reports/figures/.gitkeep
+!reports/results/.gitkeep
+
+logs/
+*.log
+
+*.tmp
+*.temp
+*.swp
+*.swo
+
+.DS_Store
+Thumbs.db
+
+.vscode/*
+
+*.egg-info/
+*.code-workspace
