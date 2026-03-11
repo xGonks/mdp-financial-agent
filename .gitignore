@@ -2,6 +2,7 @@
 # pip install -e .
 # pip install ipykernel
 # from template.utils.print_numbers import print_numbers
+# python -m mdp.data.download_data
 
 **pycache**/
 *.py[cod]

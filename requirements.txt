@@ -8,3 +8,5 @@ ipykernel
 tqdm
 loguru
 python-dotenv
+pymdptoolbox
+yfinance
