@@ -9,30 +9,18 @@ def create_transition_matrix(features, memory):
             groups = [features.unique()]
 
         states = list(product(*groups))
-        print(states)
-        for i in states:
-            print(len(i))
         matrix = pd.DataFrame(0, index=states, columns=states, dtype=float)
 
+        for i in range(len(features) - 1):
+            if isinstance(features, pd.DataFrame):
+                actual_state = tuple(features.loc[i, :])
+                next_state = tuple(features.loc[i + 1, :])
+            elif isinstance(features, pd.Series):
+                actual_state = (features.loc[i],)
+                next_state = (features.loc[i + 1],)
 
+            matrix.at[actual_state, next_state] += 1
 
+        matrix = matrix.div(matrix.sum(axis=1), axis=0).fillna(0)
 
-
-
-        print("No mem")
-
-    print()
-
-
-
-def matrices_transicion(data, col_discreta="close_discreta"):
-    estados = data[col_discreta].unique().tolist()
-    matriz = pd.DataFrame(0, index=estados, columns=estados, dtype=float)
-    for i in range(len(data) - 1):
-        estado_actual = data.loc[i, col_discreta]
-        estado_siguiente = data.loc[i + 1, col_discreta]
-        matriz.loc[estado_actual, estado_siguiente] += 1
-        
-    matriz = matriz.div(matriz.sum(axis=1), axis=0).fillna(0)
-    
-    return matriz
+        return matrix
